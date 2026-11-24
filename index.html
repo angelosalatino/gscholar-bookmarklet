@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,7 +179,7 @@
       padding: 24px;
       border-radius: 14px;
       border: 1px solid var(--border);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .card h3 {
@@ -191,7 +192,8 @@
       gap: 8px;
     }
 
-    .card ol, .card ul {
+    .card ol,
+    .card ul {
       padding-left: 20px;
       font-size: 13.5px;
       color: #334155;
@@ -246,7 +248,8 @@
       text-align: right;
     }
 
-    #gsc_rsb_st th, #gsc_rsb_st td {
+    #gsc_rsb_st th,
+    #gsc_rsb_st td {
       padding: 4px 10px;
     }
 
@@ -344,6 +347,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
@@ -361,7 +365,7 @@
       <div class="bookmarklet-btn-wrapper">
         <!-- DRAGGABLE BOOKMARKLET LINK (Generated from dist/bookmarklet.url.txt) -->
         <a id="main-bookmarklet-link" class="bookmarklet-link" title="Drag me to your Bookmarks bar" href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://cdn.jsdelivr.net/gh/angelosalatino/gscholar-bookmarklet/dist/bookmarklet.min.js';})();">
-          <span>📊</span> Scholar Distribution
+          Google Scholar Citation Distribution
         </a>
 
         <button class="btn-secondary" id="btn-copy-code">
@@ -552,7 +556,7 @@
     // Set up Copy and Live Demo buttons from embedded link
     const link = document.getElementById('main-bookmarklet-link');
     const bookmarkletUrl = link.getAttribute('href') || '';
-    
+
     // Copy button
     document.getElementById('btn-copy-code').onclick = () => {
       const currentUrl = link.getAttribute('href') || '';
@@ -589,4 +593,5 @@
     };
   </script>
 </body>
+
 </html>
