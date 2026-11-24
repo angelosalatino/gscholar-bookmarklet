@@ -152,9 +152,15 @@ def strip_comments_and_minify(js_code: str) -> str:
 
     return '\n'.join(compacted_lines)
 
+BOOKMARKLET_LOADER = (
+    "javascript:(function(){"
+    "document.body.appendChild(document.createElement('script')).src="
+    "'https://cdn.jsdelivr.net/gh/angelosalatino/gscholar-bookmarklet/dist/bookmarklet.min.js';"
+    "})();"
+)
+
 def make_bookmarklet_url(js_code: str) -> str:
-    # URL encode for safe bookmarklet URI in all browsers
-    return 'javascript:' + urllib.parse.quote(js_code, safe="~*'()")
+    return BOOKMARKLET_LOADER
 
 def update_index_html(html_path: str, bookmarklet_url: str):
     with open(html_path, 'r', encoding='utf-8') as f:

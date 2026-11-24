@@ -1,13 +1,14 @@
 # Google Scholar Citation Distribution & h-index Visualizer
 
-A self-contained JavaScript bookmarklet that parses any Google Scholar profile (such as [Geoffrey Hinton's profile](https://scholar.google.com/citations?user=RFWhMIkAAAAJ&hl=en)), automatically loads all papers on the profile, sorts them in descending order (highest to lowest citations, with an option to toggle ascending), and renders an interactive SVG chart floating directly in the middle of your screen with an explicit vertical boundary indicating where the **h-index** sits.
+A self-contained JavaScript bookmarklet that parses any Google Scholar profile (such as [Angelo Salatino's profile](https://scholar.google.com/citations?user=RFWhMIkAAAAJ&hl=en)), automatically loads all papers on the profile, sorts them in descending order (highest to lowest citations, with an option to toggle ascending), and renders an interactive SVG chart floating directly in the middle of your screen with an explicit vertical boundary indicating where the **h-index** sits.
 
 ---
 
-## 🚀 Quick Start / Installation
+# How to install
+Please [read here](https://htmlpreview.github.io/?https://github.com/angelosalatino/gscholar-bookmarklet/blob/main/index.html)
 
 ### Method 1: Drag-and-Drop Installation (Recommended)
-1. Open `index.html` in your browser (double-click `index.html` locally, or visit your deployed GitHub Pages URL).
+1. Open the [interactive installer page](https://htmlpreview.github.io/?https://github.com/angelosalatino/gscholar-bookmarklet/blob/main/index.html) (or `index.html` locally).
 2. Make sure your browser's Bookmarks bar is visible:
    - **Chrome / Edge / Brave**: Press `Cmd + Shift + B` (Mac) or `Ctrl + Shift + B` (Windows/Linux).
    - **Safari**: View > Always Show Bookmarks Bar (`Cmd + Shift + B`).
@@ -15,9 +16,12 @@ A self-contained JavaScript bookmarklet that parses any Google Scholar profile (
 3. Drag the blue **`📊 Scholar Distribution`** button directly up into your Bookmarks Bar.
 
 ### Method 2: Manual Bookmark Creation
-1. Copy the full bookmarklet URL from [`dist/bookmarklet.url.txt`](dist/bookmarklet.url.txt).
+1. Copy the bookmarklet snippet below (also available in [`dist/bookmarklet.url.txt`](dist/bookmarklet.url.txt)):
+   ```javascript
+   javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://cdn.jsdelivr.net/gh/angelosalatino/gscholar-bookmarklet/dist/bookmarklet.min.js';})();
+   ```
 2. Right-click your Bookmarks Bar and select **"Add Page..."** / **"New Bookmark"**.
-3. Name it **"Scholar Distribution"** and paste the code into the **URL / Location** field.
+3. Name it **"Scholar Distribution"** and paste the snippet into the **URL / Location** field.
 4. Save.
 
 ---
@@ -57,11 +61,9 @@ Citation distributions typically follow a Pareto / power-law distribution ($P(C)
 
 ---
 
-## 🛡️ Content Security Policy (CSP) Compliance
-Google Scholar enforces strict Content Security Policies that block loading third-party scripts from external CDNs (such as Chart.js, D3, or unpkg).
-
-This bookmarklet is **100% self-contained vanilla JavaScript**:
-- Zero external libraries or network requests.
+## 🛡️ Lightweight & Zero External Libraries
+The visualizer script is **100% self-contained vanilla JavaScript**:
+- Zero third-party charting libraries (no Chart.js, D3, or jQuery).
 - Pure native SVG generation.
 - Scoped DOM styling that does not interfere with Google Scholar's styles.
 
